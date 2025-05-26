@@ -46,7 +46,7 @@ const LogOut = () => {
   const label = { inputProps: { 'aria-label': 'Switch demo' } };
   return (
     <>
-      <div className="logout bg-[#323238cb] bg-[url('log-bg.jpeg')] bg-blend-multiply bg-cover bg-center ">
+      <div className="logout bg-[#323238cb] bg-[url('./log-bg.jpeg')] bg-blend-multiply bg-cover bg-center ">
       <div className="pricing">
         <header className="p-6 pt-8">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between  lg:px-8 text-white">
