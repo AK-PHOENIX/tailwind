@@ -26,11 +26,11 @@ function App() {
         ],
     },
     {
-      path : '/pricing',
+      path : '/tailwind/pricing',
       element : <Pricing/>,
     },
     {
-      path : '/logout',
+      path : '/tailwind/logout',
       element : <LogOut/>,
     },
 ]);

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Star } from './Images';
 import { SlSocialInstagram } from "react-icons/sl";
 import {
     Dialog,
@@ -46,7 +46,7 @@ const Pricing = () => {
     <>
     
       <div className="pricing">
-        <div className="nav-body min-h-[50vh] h-[50vh]  m-4 pt-4 bg-[#323238cb] bg-[url('./star-bg.jpg')] bg-center bg-blend-multiply rounded-[12px]">
+        <div className="nav-body min-h-[50vh] h-[50vh]  m-4 pt-4 bg-[#323238cb] bg-center bg-blend-multiply rounded-[12px]" style={{ backgroundImage: `url(${Star})` }}>
         <header className="">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between  lg:px-8 text-white">
         <div className="flex lg:flex-1">

@@ -37,7 +37,7 @@ const Home = (props) => {
                         <div className="to-img w-[20px]"><FaBiohazard /></div>
                         <p className="navs-text py-[8px] px-[16px] text-[16px] text-[#171717]">Settings</p>
                     </div>
-                    <Link to='/pricing' className="navs flex pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer hover:bg-[#ededed] rounded-[8px]">
+                    <Link to='/tailwind/pricing' className="navs flex pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer hover:bg-[#ededed] rounded-[8px]">
                         <div className="to-img w-[20px]"><FaBiohazard /></div>
                         <p className="navs-text py-[8px] px-[16px] text-[16px] text-[#171717]">Pricing Page</p>
                     </Link>
@@ -45,7 +45,7 @@ const Home = (props) => {
                         <div className="to-img w-[20px]"><FaBiohazard /></div>
                         <p className="navs-text py-[8px] px-[16px] text-[16px] text-[#171717]] ">Charts</p>
                     </Link>
-                    <Link to='/logout' className="navs flex pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer hover:bg-[#ededed] rounded-[8px]">
+                    <Link to='/tailwind/logout' className="navs flex pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer hover:bg-[#ededed] rounded-[8px]">
                         <div className="to-img w-[20px]"><FaBiohazard /></div>
                         <p className="navs-text py-[8px] px-[16px] text-[16px] text-[#171717]] ">Logout</p>
                     </Link>

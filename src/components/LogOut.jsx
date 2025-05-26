@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Log } from './Images';
 import Switch from '@mui/material/Switch';
 import { SlSocialInstagram } from "react-icons/sl";
 import {
@@ -46,7 +46,8 @@ const LogOut = () => {
   const label = { inputProps: { 'aria-label': 'Switch demo' } };
   return (
     <>
-      <div className="logout bg-[#323238cb] bg-[url('./log-bg.jpeg')] bg-blend-multiply bg-cover bg-center ">
+      <div className="logout bg-[#323238cb] bg-blend-multiply bg-cover bg-center h-[100vh]"
+      style={{ backgroundImage: `url(${Log})` }}>
       <div className="pricing">
         <header className="p-6 pt-8">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between  lg:px-8 text-white">
