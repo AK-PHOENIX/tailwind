@@ -7,12 +7,13 @@ import Switch from '@mui/material/Switch';
 import { IoIosHeart } from "react-icons/io";
 import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
+import {Banner} from './Images/index.js';
 const Profile = () => {
     
   const label = { inputProps: { 'aria-label': 'Switch demo' } };
   return (
     <>
-        <div className="banner-img bg-[#42424a99] bg-[url('./banner-bg.jpeg')] bg-blend-multiply  min-h-[300px] rounded-[16px]  bg-center ">
+        <div className="banner-img bg-[#42424a99] bg-blend-multiply  min-h-[300px] rounded-[16px]  bg-center " style={{ backgroundImage: `url(${Banner})` }}>
                 </div>
                 <div className="profile-card mx-6 mt-[-64px] z-10 p-4 bg-white border-[1px] border-solid rounded-[8px] border-[#e5e5e5] mb-10">
                     <div className="profile-bar flex justify-between items-center mb-[40px]">
