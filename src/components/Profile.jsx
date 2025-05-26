@@ -9,6 +9,7 @@ import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
 const Profile = () => {
     
+  const label = { inputProps: { 'aria-label': 'Switch demo' } };
   return (
     <>
         <div className="banner-img bg-[#42424a99] bg-[url('./banner-bg.jpeg')] bg-blend-multiply  min-h-[300px] rounded-[16px]  bg-center ">

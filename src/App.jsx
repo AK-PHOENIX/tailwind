@@ -12,15 +12,15 @@ import LogOut from './components/Logout';
 function App() {
   const router = createBrowserRouter([
     {
-        path: '/',
+        path: '/tailwind/',
         element: <Home />,
         children: [
         {
-            path: '/',
+            path: '/tailwind/',
             element: <Profile />,
         },
         {
-            path: '/charts',
+            path: '/tailwind/charts',
             element: <Charts />,
         },
         ],
