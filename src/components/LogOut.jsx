@@ -49,7 +49,7 @@ const LogOut = () => {
       <div className="logout bg-[#323238cb] bg-blend-multiply bg-cover bg-center h-[100vh]"
       style={{ backgroundImage: `url(${Log})` }}>
       <div className="pricing">
-        <header className="p-6 pt-8">
+        <header className="p-6 py-8">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between  lg:px-8 text-white">
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
@@ -208,7 +208,7 @@ const LogOut = () => {
     </header>
       </div>
         <div className="form flex justify-center items-center">
-            <div className="form-inside bg-white rounded-[8px] p-4 ">
+            <div className="form-inside bg-white rounded-[8px] p-4 w-[420px]">
             <div className="form-head p-4 bg-[#343439] text-white text-center rounded-[8px]">
                 <h2 className="sign-in mt-2 text-2xl font-semibold">Sign in</h2>
                 <ul className='flex itemx-center justify-center mt-2 mb-6 gap-6 pt-4'>

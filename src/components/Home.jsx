@@ -53,7 +53,7 @@ const Home = (props) => {
                 </div>
             </div>
             <div className="main w-full p-6 ">
-                <nav className="main-nav flex justify-between items-center m-4 ml-0">
+                <nav className="main-nav flex justify-between items-center py-1 mb-4 ml-0">
                     <div className="left-opts flex justify-between items-center">
                         <img src="ham-burger.png" alt="" className="ham-burger w-[34px] " />
                         <p className="routes">Profile Overview</p>
