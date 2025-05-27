@@ -46,7 +46,7 @@ const LogOut = () => {
   const label = { inputProps: { 'aria-label': 'Switch demo' } };
   return (
     <>
-      <div className="logout bg-[#323238cb] bg-blend-multiply bg-cover bg-center h-[100vh]"
+      <div className="logout bg-[#323238cb] bg-blend-multiply bg-cover bg-center h-[100vh] relative"
       style={{ backgroundImage: `url(${Log})` }}>
       <div className="pricing">
         <header className="p-6 py-8">
@@ -231,7 +231,7 @@ const LogOut = () => {
             <p className="sign-up mt-6 mb-2 text-[16px] text-[#A7A7A7] text-center">Don't have an accout? <span className='text-[#191919] font-bold'>Sign Up</span></p>
             </div>
         </div>
-      <footer className="footer py-12 flex items-center justify-between text-center mx-auto flex max-w-7xl items-center justify-between  lg:px-8 text-white">
+      <footer className="footer py-12 flex items-center justify-between text-center mx-auto flex max-w-7xl items-center justify-between  lg:px-8 text-white relative bottom-0">
         <p className="footerp text-[16px] text-white">Copyright © 2021 Material by Creative Tim.</p>
         <ul className='flex mb-6'>
           <li className='text-[16px] text-white mr-12'>Company</li>

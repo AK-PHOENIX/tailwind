@@ -13,7 +13,7 @@ const Profile = () => {
   const label = { inputProps: { 'aria-label': 'Switch demo' } };
   return (
     <>
-        <div className="banner-img bg-[#42424a99] bg-blend-multiply  min-h-[300px] rounded-[16px]  bg-center " style={{ backgroundImage: `url(${Banner})` }}>
+        <div className="banner-img bg-[#42424a99] bg-blend-multiply  min-h-[300px] max-xl:min-h-[250px] rounded-[16px]  bg-center " style={{ backgroundImage: `url(${Banner})` }}>
                 </div>
                 <div className="profile-card mx-6 mt-[-64px] z-10 p-4 bg-white border-[1px] border-solid rounded-[8px] border-[#e5e5e5] mb-10">
                     <div className="profile-bar flex justify-between items-center mb-[40px]">
@@ -41,10 +41,10 @@ const Profile = () => {
                     </div>
                     <div className="profile-sections grid grid-cols-3 mb-6">
                         <div className="platform-settings">
-                            <h2 className="platform-heading p-4 text-[1rem] text-[#171717] font-semibold">Platform Settings</h2>
-                            <div className="  pt-[8px] px-4 text-[16px]">
+                            <h2 className="platform-heading p-4 max-xl:p-2 text-[1rem] text-[#171717] font-semibold">Platform Settings</h2>
+                            <div className="  pt-[8px] px-4 text-[16px] max-xl:p-2">
                             <h4 className="account-head text-[#737373]">ACCOUNT</h4>
-                            <ul className='px-4 py-2'>
+                            <ul className='px-4 py-2 max-xl:p-2'>
                                 <li className='flex items-center text-[#737373] mb-1'>
                                 <Switch {...label} defaultChecked color="default" />
                                     <p>Email me when someone follows me</p>
@@ -61,7 +61,7 @@ const Profile = () => {
                             </div>
                             <div className="mt-6  pt-[8px] px-4 text-[16px]">
                             <h4 className="account-head text-[#737373]">APPLICATION</h4>
-                            <ul className='px-4 py-2'>
+                            <ul className='px-4 py-2 '>
                                 <li className='flex items-center text-[#737373] mb-1'>
                                 <Switch {...label} defaultChecked color="default" />
                                     <p>
@@ -80,12 +80,12 @@ const Profile = () => {
                             </div>
                         </div>
                         <div className="Profile-information">
-                            <div className="flex items-center justify-between p-4">
+                            <div className="flex items-center justify-between p-4 max-xl:p-2">
                             <h2 className="info-heading text-[1rem] text-[#171717] font-semibold ">Profile Information</h2>
                             <MdEdit />
                             </div>
-                            <div className="info-content p-4">
-                                <p className="info-p mb-8 text-[#737373] text-[16px]">Hi, I’m Alec Thompson, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality).</p>
+                            <div className="info-content p-4 max-xl:p-2">
+                                <p className="info-p mb-8 text-[#737373] text-[16px] max-sm:text-center max-xl:p-2">Hi, I’m Alec Thompson, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality).</p>
                                 <ul>
                                     <li className='text-[#737373] text-[16px] flex py-2 pr-4 gap-3'><span className='font-semibold  text-[#171717]'>Full Name: </span>Aman</li>
                                     <li className='text-[#737373] text-[16px] flex py-2 pr-4 gap-3'><span className='font-semibold  text-[#171717]'>Mobile: </span>9053367716</li>
@@ -96,7 +96,7 @@ const Profile = () => {
                             </div>
                         </div>
                         <div className="conversations">
-                        <h2 className="info-heading p-4 text-[1rem] text-[#171717] font-semibold ">Conversations</h2>
+                        <h2 className="info-heading p-4 text-[1rem] max-xl:p-2 text-[#171717] font-semibold ">Conversations</h2>
                         <div className="chats p-4">
                             <div className="chat flex items-center justify-between py-2 mb-2">
                                 <div className="chat-name  flex justify-between items-center gap-4">

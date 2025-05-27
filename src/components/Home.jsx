@@ -12,9 +12,9 @@ import Profile from './Profile';
 import Charts from './Charts';
 import Pricing from './Pricing';
 import { Logout } from '@mui/icons-material';
-import { createBrowserRouter , RouterProvider , Link, Outlet } from 'react-router-dom';
-const Home = (props) => {
-    
+import { createBrowserRouter , RouterProvider , Link, Outlet , useLocation} from 'react-router-dom';
+const Home = () => {
+    const location = useLocation();
   return (
     <>
         <div className="homepage flex">
@@ -37,7 +37,12 @@ const Home = (props) => {
                         <div className="to-img w-[20px]"><FaBiohazard /></div>
                         <p className="navs-text py-[8px] px-[16px] text-[16px] text-[#171717]">Settings</p>
                     </div>
-                    <Link to='/tailwind/pricing' className="navs flex pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer hover:bg-[#ededed] rounded-[8px]">
+                    <Link to='/tailwind/logout' className="navs flex pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer hover:bg-[#ededed] rounded-[8px]">
+                        <div className="to-img w-[20px]"><FaBiohazard /></div>
+                        <p className="navs-text py-[8px] px-[16px] text-[16px] text-[#171717]] ">Logout</p>
+                    </Link>
+                    <h2 className="username font-semibold text-[18px] pl-[20px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] text-[#171717]">Pages</h2>
+                    <Link to='/tailwind/pricing' className="navs flex  pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer hover:bg-[#ededed] rounded-[8px]">
                         <div className="to-img w-[20px]"><FaBiohazard /></div>
                         <p className="navs-text py-[8px] px-[16px] text-[16px] text-[#171717]">Pricing Page</p>
                     </Link>
@@ -45,10 +50,7 @@ const Home = (props) => {
                         <div className="to-img w-[20px]"><FaBiohazard /></div>
                         <p className="navs-text py-[8px] px-[16px] text-[16px] text-[#171717]] ">Charts</p>
                     </Link>
-                    <Link to='/tailwind/logout' className="navs flex pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer hover:bg-[#ededed] rounded-[8px]">
-                        <div className="to-img w-[20px]"><FaBiohazard /></div>
-                        <p className="navs-text py-[8px] px-[16px] text-[16px] text-[#171717]] ">Logout</p>
-                    </Link>
+                    
                 </div>
                 </div>
             </div>

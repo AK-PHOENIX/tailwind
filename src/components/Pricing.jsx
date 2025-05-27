@@ -33,7 +33,14 @@ import {
     { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
     { name: 'Contact sales', href: '#', icon: PhoneIcon },
   ] 
+  import {
+    Accordion,
+    AccordionHeader,
+    AccordionBody,
+  } from "@material-tailwind/react";
+   
 const Pricing = () => {
+  const [open, setOpen] = React.useState(1);
   const [isAnnual, setIsAnnual] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const plans = [
@@ -569,6 +576,34 @@ const Pricing = () => {
     </div>
 
       </div>
+      {/* <Accordion open={open === 1}>
+        <AccordionHeader onClick={() => handleOpen(1)}>What is Material Tailwind?</AccordionHeader>
+        <AccordionBody>
+          We&apos;re not always in the position that we want to be at. We&apos;re constantly
+          growing. We&apos;re constantly making mistakes. We&apos;re constantly trying to express
+          ourselves and actualize our dreams.
+        </AccordionBody>
+      </Accordion>
+      <Accordion open={open === 2}>
+        <AccordionHeader onClick={() => handleOpen(2)}>
+          How to use Material Tailwind?
+        </AccordionHeader>
+        <AccordionBody>
+          We&apos;re not always in the position that we want to be at. We&apos;re constantly
+          growing. We&apos;re constantly making mistakes. We&apos;re constantly trying to express
+          ourselves and actualize our dreams.
+        </AccordionBody>
+      </Accordion>
+      <Accordion open={open === 3}>
+        <AccordionHeader onClick={() => handleOpen(3)}>
+          What can I do with Material Tailwind?
+        </AccordionHeader>
+        <AccordionBody>
+          We&apos;re not always in the position that we want to be at. We&apos;re constantly
+          growing. We&apos;re constantly making mistakes. We&apos;re constantly trying to express
+          ourselves and actualize our dreams.
+        </AccordionBody>
+      </Accordion> */}
       </div>
       <footer className="footer py-12 flex items-center justify-center text-center flex-col">
         <ul className='flex mb-6'>
