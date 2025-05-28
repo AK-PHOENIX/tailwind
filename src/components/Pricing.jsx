@@ -55,7 +55,7 @@ const Pricing = () => {
       <div className="pricing">
         <div className="nav-body min-h-[50vh] h-[50vh]  m-4 pt-4 bg-[#323238cb] bg-center bg-blend-multiply rounded-[12px]" style={{ backgroundImage: `url(${Star})` }}>
         <header className="">
-      <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between  lg:px-8 text-white">
+      <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between  lg:px-8 text-white dark:text-black">
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
@@ -71,16 +71,16 @@ const Pricing = () => {
             <Bars3Icon aria-hidden="true" className="size-6" />
           </button>
         </div>
-        <PopoverGroup className="hidden lg:flex lg:gap-x-12 text-white">
+        <PopoverGroup className="hidden lg:flex lg:gap-x-12 text-white dark:text-black">
           <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold text-white">
+            <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold text-white dark:text-black">
               Product
-              <ChevronDownIcon aria-hidden="true" className="size-5 flex-none text-white" />
+              <ChevronDownIcon aria-hidden="true" className="size-5 flex-none text-white dark:text-black" />
             </PopoverButton>
 
             <PopoverPanel
               transition
-              className="absolute top-full -left-8 z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
+              className="absolute top-full -left-8 z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white dark:bg-[#1D1D1D] shadow-lg ring-1 ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
             >
               <div className="p-4">
                 {products.map((item) => (
@@ -88,7 +88,7 @@ const Pricing = () => {
                     key={item.name}
                     className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50"
                   >
-                    <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                    <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white dark:bg-[#1D1D1D]">
                       <item.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />
                     </div>
                     <div className="flex-auto">
@@ -116,16 +116,16 @@ const Pricing = () => {
             </PopoverPanel>
           </Popover>
 
-          <a href="#" className="text-sm/6 font-semibold text-white">
+          <a href="#" className="text-sm/6 font-semibold text-white dark:text-black">
             Authentication
           </a>
-          <a href="#" className="text-sm/6 font-semibold text-white">
+          <a href="#" className="text-sm/6 font-semibold text-white dark:text-black">
             Application
           </a>
-          <a href="#" className="text-sm/6 font-semibold text-white">
+          <a href="#" className="text-sm/6 font-semibold text-white dark:text-black">
             E-commerce
           </a>
-          <a href="#" className="text-sm/6 font-semibold text-white">
+          <a href="#" className="text-sm/6 font-semibold text-white dark:text-black">
             Docs
           </a>
         </PopoverGroup>
@@ -138,7 +138,7 @@ const Pricing = () => {
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
         <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white dark:bg-[#1D1D1D] px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
@@ -211,15 +211,15 @@ const Pricing = () => {
       </Dialog>
     </header>
           <div className="py-44 mt-[-24px] flex justify-center items-center text-center flex-col">
-          <h1 className="banner-heading text-4xl font-semibold tracking-wide text-white">Pick the best plan for you</h1>
-          <p className="pt-6 text-[16px]  font-normal text-white">
+          <h1 className="banner-heading text-4xl font-semibold tracking-wide text-white dark:text-black">Pick the best plan for you</h1>
+          <p className="pt-6 text-[18px]  font-normal text-white dark:text-black">
             You have Free Unlimited Updates and Premium Support on each package.
             </p>
           </div>
         </div>
       </div>
 
-      <div className="min-h-screen flex border-[#D2D6DA] border-solid border-[1px] rounded-[8px] justify-center items-center flex-col mt-[-80px] bg-white mx-12 mb-12">
+      <div className="min-h-screen flex border-[#D2D6DA] border-solid border-[1px] rounded-[8px] justify-center items-center flex-col mt-[-80px] bg-white dark:bg-[#1D1D1D] mx-12 mb-12">
         <div className="w-full px-4 py-12">
 
           {/* Toggle */}
@@ -227,19 +227,19 @@ const Pricing = () => {
             <div className="relative flex min-w-[400px] p-1 bg-[#f5f5f5]  rounded-[12px]">
               <span className="absolute inset-0 m-1 pointer-events-none">
                 <span
-                  className={`absolute inset-0 w-1/2 bg-white rounded-[8px] shadow-sm transform transition-transform duration-150 ease-in-out ${
+                  className={`absolute inset-0 w-1/2 bg-white dark:bg-[#1D1D1D] rounded-[8px] shadow-sm transform transition-transform duration-150 ease-in-out ${
                     isAnnual ? "translate-x-0" : "translate-x-full"
                   }`}
                 ></span>
               </span>
               <button
-                className={`relative flex-1 text-[16px] rounded-[8px] text-[#171717] p-1 transition-colors duration-150 `}
+                className={`relative flex-1 text-[18px] rounded-[8px] text-[#171717] p-1 transition-colors duration-150 `}
                 onClick={() => setIsAnnual(true)}
               >
                 <div className="px-4 py-1">Monthly</div>
               </button>
               <button
-                className={`relative flex-1 text-[16px] rounded-[8px] text-[#171717] p-1 transition-colors duration-150 `}
+                className={`relative flex-1 text-[18px] rounded-[8px] text-[#171717] p-1 transition-colors duration-150 `}
                 onClick={() => setIsAnnual(false)}
               >
                 Yearly
@@ -252,7 +252,7 @@ const Pricing = () => {
           <div className=" mx-[144px] grid gap-6 lg:grid-cols-3 items-start">
                         {/* <!-- Pricing tab 1 --> */}
                         <div className="dark h-full">
-                            <div className="relative flex flex-col h-full p-6 bg-white  border-[#D2D6DA] border-solid border-[1px] rounded-[12px] shadow shadow-slate-950/5">
+                            <div className="relative flex flex-col h-full p-6 bg-white dark:bg-[#1D1D1D]  border-[#D2D6DA] border-solid border-[1px] rounded-[12px] shadow shadow-slate-950/5">
                                 <div className="absolute top-0 right-[50%] mr-[-50px] -mt-4">
                                     <div className="inline-flex items-center text-xs font-semibold py-1.5 px-3 bg-[#F0F2F5] text-[#171717] rounded-full shadow-sm shadow-slate-950/5">STARTER</div>
                                 </div>
@@ -265,7 +265,7 @@ const Pricing = () => {
                                     
                                 </div>
                                 <ul className="text-slate-600 dark:text-slate-400 text-sm space-y-3 grow">
-                                    <li className="flex items-center p-2 m-0 text-[16px] 
+                                    <li className="flex items-center p-2 m-0 text-[18px] 
                                     text-[#7
                                     7373]">
                                         <svg className="w-3 h-3 fill-emerald-500 mr-3 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -273,7 +273,7 @@ const Pricing = () => {
                                         </svg>
                                         <span>Unlimited placeholder texts</span>
                                     </li>
-                                    <li className="flex items-center p-2 m-0 text-[16px] 
+                                    <li className="flex items-center p-2 m-0 text-[18px] 
                                     text-[#7
                                     7373]">
                                         <svg className="w-3 h-3 fill-emerald-500 mr-3 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -281,7 +281,7 @@ const Pricing = () => {
                                         </svg>
                                         <span>Consectetur adipiscing elit</span>
                                     </li>
-                                    <li className="flex items-center p-2 m-0 text-[16px] 
+                                    <li className="flex items-center p-2 m-0 text-[18px] 
                                     text-[#7
                                     7373]">
                                         <svg className="w-3 h-3 fill-emerald-500 mr-3 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -289,7 +289,7 @@ const Pricing = () => {
                                         </svg>
                                         <span>Excepteur sint occaecat cupidatat</span>
                                     </li>
-                                    <li className="flex items-center p-2 m-0 text-[16px] 
+                                    <li className="flex items-center p-2 m-0 text-[18px] 
                                     text-[#7
                                     7373]">
                                         <svg className="w-3 h-3 fill-emerald-500 mr-3 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -297,7 +297,7 @@ const Pricing = () => {
                                         </svg>
                                         <span>Officia deserunt mollit anim</span>
                                     </li>
-                                    <li className="flex items-center p-2 m-0 text-[16px] 
+                                    <li className="flex items-center p-2 m-0 text-[18px] 
                                     text-[#7
                                     7373]">
                                         <svg className="w-3 h-3 fill-emerald-500 mr-3 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -306,7 +306,7 @@ const Pricing = () => {
                                         <span>Predefined chunks as necessary</span>
                                         
                                     </li>
-                                    <li className="flex items-center p-2 m-0 text-[16px] 
+                                    <li className="flex items-center p-2 m-0 text-[18px] 
                                     text-[#7
                                     7373]">
                                         <svg className="w-3 h-3 fill-emerald-500 mr-3 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -316,7 +316,7 @@ const Pricing = () => {
                                         
                                     </li>
                                 </ul>
-                                <a className="w-full mt-6 inline-flex justify-center whitespace-nowrap rounded-lg bg-[#343439] px-3.5 py-2.5 text-sm font-medium text-white shadow-sm shadow-indigo-950/10 hover:bg-indigo-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150" href="#0">
+                                <a className="w-full mt-6 inline-flex justify-center whitespace-nowrap rounded-lg bg-[#343439] px-3.5 py-2.5 text-sm font-medium text-white dark:text-black shadow-sm shadow-indigo-950/10 hover:bg-indigo-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150" href="#0">
                                         Purchase Plan
                                     </a>
                             </div>
@@ -329,15 +329,15 @@ const Pricing = () => {
                                     <div className="inline-flex items-center text-xs font-semibold px-8 py-1 bg-[#171717] text-[#F0F2F5] rounded-full shadow-sm shadow-slate-950/5">PREMUIM</div>
                                 </div>
                                 <div className="mb-5 text-center my-2 relative pt-6 pb-4 pr-3.5">
-                                    <h1 className="inline-flex items-baseline mb-2 text-5xl font-bold text-white">
-                                        <small className="text-white  font-bold text-xl top-0">$</small>
+                                    <h1 className="inline-flex items-baseline mb-2 text-5xl font-bold text-white dark:text-black">
+                                        <small className="text-white dark:text-black  font-bold text-xl top-0">$</small>
                                         69
-                                        <small className="text-white font-medium text-xl">/mo</small>
+                                        <small className="text-white dark:text-black font-medium text-xl">/mo</small>
                                     </h1>
                                     
                                 </div>
-                                <ul className="text-white text-sm space-y-3 grow">
-                                    <li className="flex items-center p-2 m-0 text-[16px] 
+                                <ul className="text-white dark:text-black text-sm space-y-3 grow">
+                                    <li className="flex items-center p-2 m-0 text-[18px] 
                                     text-[#7
                                     7373]">
                                         <svg className="w-3 h-3 fill-emerald-500 mr-3 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -345,7 +345,7 @@ const Pricing = () => {
                                         </svg>
                                         <span>Unlimited placeholder texts</span>
                                     </li>
-                                    <li className="flex items-center p-2 m-0 text-[16px] 
+                                    <li className="flex items-center p-2 m-0 text-[18px] 
                                     text-[#7
                                     7373]">
                                         <svg className="w-3 h-3 fill-emerald-500 mr-3 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -353,7 +353,7 @@ const Pricing = () => {
                                         </svg>
                                         <span>Consectetur adipiscing elit</span>
                                     </li>
-                                    <li className="flex items-center p-2 m-0 text-[16px] 
+                                    <li className="flex items-center p-2 m-0 text-[18px] 
                                     text-[#7
                                     7373]">
                                         <svg className="w-3 h-3 fill-emerald-500 mr-3 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -361,7 +361,7 @@ const Pricing = () => {
                                         </svg>
                                         <span>Excepteur sint occaecat cupidatat</span>
                                     </li>
-                                    <li className="flex items-center p-2 m-0 text-[16px] 
+                                    <li className="flex items-center p-2 m-0 text-[18px] 
                                     text-[#7
                                     7373]">
                                         <svg className="w-3 h-3 fill-emerald-500 mr-3 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -369,7 +369,7 @@ const Pricing = () => {
                                         </svg>
                                         <span>Officia deserunt mollit anim</span>
                                     </li>
-                                    <li className="flex items-center p-2 m-0 text-[16px] 
+                                    <li className="flex items-center p-2 m-0 text-[18px] 
                                     text-[#7
                                     7373]">
                                         <svg className="w-3 h-3 fill-emerald-500 mr-3 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -378,7 +378,7 @@ const Pricing = () => {
                                         <span>Predefined chunks as necessary</span>
                                         
                                     </li>
-                                    <li className="flex items-center p-2 m-0 text-[16px] 
+                                    <li className="flex items-center p-2 m-0 text-[18px] 
                                     text-[#7
                                     7373]">
                                         <svg className="w-3 h-3 fill-emerald-500 mr-3 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -388,7 +388,7 @@ const Pricing = () => {
                                         
                                     </li>
                                 </ul>
-                                <a className="w-full mt-6 inline-flex justify-center whitespace-nowrap rounded-lg bg-[#343439] px-3.5 py-2.5 text-sm font-medium text-white shadow-sm shadow-indigo-950/10 hover:bg-indigo-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150" href="#0">
+                                <a className="w-full mt-6 inline-flex justify-center whitespace-nowrap rounded-lg bg-[#343439] px-3.5 py-2.5 text-sm font-medium text-white dark:text-black shadow-sm shadow-indigo-950/10 hover:bg-indigo-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150" href="#0">
                                         Purchase Plan
                                     </a>
                             </div>
@@ -396,7 +396,7 @@ const Pricing = () => {
 
                         {/* <!-- Pricing tab 3 --> */}
                         <div className="dark h-full">
-                            <div className="relative flex flex-col h-full p-6 bg-white  border-[#D2D6DA] border-solid border-[1px] rounded-[12px] shadow shadow-slate-950/5">
+                            <div className="relative flex flex-col h-full p-6 bg-white dark:bg-[#1D1D1D]  border-[#D2D6DA] border-solid border-[1px] rounded-[12px] shadow shadow-slate-950/5">
                                 <div className="absolute top-0 right-[50%] mr-[-50px] -mt-4">
                                     <div className="inline-flex items-center text-xs font-semibold py-1.5 px-3 bg-[#F0F2F5] text-[#171717] rounded-full shadow-sm shadow-slate-950/5">STARTER</div>
                                 </div>
@@ -409,7 +409,7 @@ const Pricing = () => {
                                     
                                 </div>
                                 <ul className="text-slate-600 dark:text-slate-400 text-sm space-y-3 grow">
-                                    <li className="flex items-center p-2 m-0 text-[16px] 
+                                    <li className="flex items-center p-2 m-0 text-[18px] 
                                     text-[#7
                                     7373]">
                                         <svg className="w-3 h-3 fill-emerald-500 mr-3 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -417,7 +417,7 @@ const Pricing = () => {
                                         </svg>
                                         <span>Unlimited placeholder texts</span>
                                     </li>
-                                    <li className="flex items-center p-2 m-0 text-[16px] 
+                                    <li className="flex items-center p-2 m-0 text-[18px] 
                                     text-[#7
                                     7373]">
                                         <svg className="w-3 h-3 fill-emerald-500 mr-3 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -425,7 +425,7 @@ const Pricing = () => {
                                         </svg>
                                         <span>Consectetur adipiscing elit</span>
                                     </li>
-                                    <li className="flex items-center p-2 m-0 text-[16px] 
+                                    <li className="flex items-center p-2 m-0 text-[18px] 
                                     text-[#7
                                     7373]">
                                         <svg className="w-3 h-3 fill-emerald-500 mr-3 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -433,7 +433,7 @@ const Pricing = () => {
                                         </svg>
                                         <span>Excepteur sint occaecat cupidatat</span>
                                     </li>
-                                    <li className="flex items-center p-2 m-0 text-[16px] 
+                                    <li className="flex items-center p-2 m-0 text-[18px] 
                                     text-[#7
                                     7373]">
                                         <svg className="w-3 h-3 fill-emerald-500 mr-3 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -441,7 +441,7 @@ const Pricing = () => {
                                         </svg>
                                         <span>Officia deserunt mollit anim</span>
                                     </li>
-                                    <li className="flex items-center p-2 m-0 text-[16px] 
+                                    <li className="flex items-center p-2 m-0 text-[18px] 
                                     text-[#7
                                     7373]">
                                         <svg className="w-3 h-3 fill-emerald-500 mr-3 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -450,7 +450,7 @@ const Pricing = () => {
                                         <span>Predefined chunks as necessary</span>
                                         
                                     </li>
-                                    <li className="flex items-center p-2 m-0 text-[16px] 
+                                    <li className="flex items-center p-2 m-0 text-[18px] 
                                     text-[#7
                                     7373]">
                                         <svg className="w-3 h-3 fill-emerald-500 mr-3 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -460,7 +460,7 @@ const Pricing = () => {
                                         
                                     </li>
                                 </ul>
-                                <a className="w-full mt-6 inline-flex justify-center whitespace-nowrap rounded-lg bg-[#343439] px-3.5 py-2.5 text-sm font-medium text-white shadow-sm shadow-indigo-950/10 hover:bg-indigo-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150" href="#0">
+                                <a className="w-full mt-6 inline-flex justify-center whitespace-nowrap rounded-lg bg-[#343439] px-3.5 py-2.5 text-sm font-medium text-white dark:text-black shadow-sm shadow-indigo-950/10 hover:bg-indigo-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150" href="#0">
                                         Purchase Plan
                                     </a>
                             </div>
@@ -468,7 +468,7 @@ const Pricing = () => {
                     </div>
         </div>
         <section className="brands-section text-center mt-[16px]">
-        <h4 className="brands-heading font-bold text-[16px] text-[#A7A7A7] mb-8">More than 50+ brands trust Material</h4>
+        <h4 className="brands-heading font-bold text-[18px] text-[#A7A7A7] mb-8">More than 50+ brands trust Material</h4>
         <div className="brands-line grid grid-cols-6">
           <div className="flex items-center justify-center w-[244px]">
             <img src="radisson.png" alt="" className="" />
@@ -491,7 +491,7 @@ const Pricing = () => {
         </div>
       </section>
 
-      <div className=" mt-[64px] mb-[48px]  px-5 bg-white min-h-sceen">
+      <div className=" mt-[64px] mb-[48px]  px-5 bg-white dark:bg-[#1D1D1D] min-h-sceen">
 	<div className="flex flex-col items-center">
 		<h2 className="font-bold text-5xl mt-5 tracking-tight">
     Frequently Asked Questions
@@ -607,12 +607,12 @@ const Pricing = () => {
       </div>
       <footer className="footer py-12 flex items-center justify-center text-center flex-col">
         <ul className='flex mb-6'>
-          <li className='text-[16px] text-[#A7A7A7] mr-12'>Company</li>
-          <li className='text-[16px] text-[#A7A7A7] mr-12'>About Us</li>
-          <li className='text-[16px] text-[#A7A7A7] mr-12'>Team</li>
-          <li className='text-[16px] text-[#A7A7A7] mr-12'>Product</li>
-          <li className='text-[16px] text-[#A7A7A7] mr-12'>Blog</li>
-          <li className='text-[16px] text-[#A7A7A7] mr-12'>Pricing</li>
+          <li className='text-[18px] text-[#A7A7A7] mr-12'>Company</li>
+          <li className='text-[18px] text-[#A7A7A7] mr-12'>About Us</li>
+          <li className='text-[18px] text-[#A7A7A7] mr-12'>Team</li>
+          <li className='text-[18px] text-[#A7A7A7] mr-12'>Product</li>
+          <li className='text-[18px] text-[#A7A7A7] mr-12'>Blog</li>
+          <li className='text-[18px] text-[#A7A7A7] mr-12'>Pricing</li>
         </ul>
         <ul className='flex itemx-center justify-center mt-2 mb-6'>
           <li className='mr-6 w-[20px]'><SlSocialInstagram/></li>
@@ -621,7 +621,7 @@ const Pricing = () => {
           <li className='mr-6 w-[20px]'><SlSocialInstagram/></li>
           <li className='mr-6 w-[20px]'><SlSocialInstagram/></li>
         </ul>
-        <p className="footerp text-[16px] text-[#A7A7A7]">Copyright © 2021 Material by Creative Tim.</p>
+        <p className="footerp text-[18px] text-[#A7A7A7]">Copyright © 2021 Material by Creative Tim.</p>
       </footer>
     </>
   );
