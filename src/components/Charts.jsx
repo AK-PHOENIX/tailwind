@@ -368,16 +368,16 @@ const Charts = () => {
   return (
     <>
         <div className="charts py-6">
-            <h2 className="heading font-bold text-[#171717] text-[20px]">Charts</h2>
+            <h2 className="heading font-bold dark:text-[#ffffffcc] text-[#171717] text-[20px]">Charts</h2>
             <p className="charts-p text-[18px] text-[#A7A7A7]">Charts on this page use Chart.js - Simple yet flexible JavaScript charting for designers & developers.</p>
             <div className="charts-grid grid grid-cols-2 gap-6 pt-6 gap-y-12">
                 <div className="line-chart bg-white dark:bg-[#1D1D1D] border-[#D2D6DA] border-solid border-[1px] rounded-[12px] p-4">
                     <div className="type-chart flex pt-2">
                         <div className="type-logo w-16 h-16 mt-[-40px] mr-[16px] rounded-xl bg-gradient-to-br from-[#42424a] to-[#191919] custom-shadow flex items-center justify-center">
-                            <AutoGraph className='text-white dark:text-black'/>
+                            <AutoGraph className='text-white dark:text-[white]'/>
                         </div>
                         <div className="chart-type-text mt-[-16px] ">
-                            <h4 className="chart-type font-bold text-[#171717]">Line Chart</h4>
+                            <h4 className="chart-type font-bold dark:text-[#ffffffcc] text-[#171717]">Line Chart</h4>
                             <p className="chart-p text-[#A7A7A7]">Product insights</p>
                         </div>
                     </div>
@@ -386,10 +386,10 @@ const Charts = () => {
                 <div className="area-chart  bg-white dark:bg-[#1D1D1D] border-[#D2D6DA] border-solid border-[1px] rounded-[12px] p-4">
                     <div className="type-chart flex pt-2">
                         <div className="type-logo w-16 h-16 mt-[-40px] mr-[16px] rounded-xl bg-gradient-to-br from-[#42424a] to-[#191919] custom-shadow flex items-center justify-center">
-                            <AutoGraph className='text-white dark:text-black'/>
+                            <AutoGraph className='text-white dark:text-[white]'/>
                         </div>
                         <div className="chart-type-text mt-[-16px]">
-                            <h4 className="chart-type font-bold text-[#171717]">Line Chart</h4>
+                            <h4 className="chart-type font-bold dark:text-[#ffffffcc] text-[#171717]">Line Chart</h4>
                             <p className="chart-p text-[#A7A7A7]">Product insights</p>
                         </div>
                     </div>
@@ -397,11 +397,11 @@ const Charts = () => {
                 </div>
                 <div className="bar-chart  bg-white dark:bg-[#1D1D1D] border-[#D2D6DA] border-solid border-[1px] rounded-[12px] p-4">
                     <div className="type-chart flex pt-2">
-                        <div className="type-logo w-16 h-16 mt-[-40px] mr-[16px] rounded-xl bg-gradient-to-br from-[#42424a] to-[#191919] custom-shadow flex items-center justify-center">
-                            <AutoGraph className='text-white dark:text-black'/>
+                        <div className="type-logo w-16 h-16 mt-[-40px] mr-[16px] rounded-xl bg-gradient-to-br from-[#42424a] to-[#191919] custom-shadow dark:dark-theme-shadow  dark:dark-shadow flex items-center justify-center">
+                            <AutoGraph className='dark:text-[white]'/>
                         </div>
                         <div className="chart-type-text mt-[-16px] ">
-                            <h4 className="chart-type font-bold text-[#171717]">Line Chart</h4>
+                            <h4 className="chart-type font-bold dark:text-[#ffffffcc] text-[#171717]">Line Chart</h4>
                             <p className="chart-p text-[#A7A7A7]">Product insights</p>
                         </div>
                     </div>
@@ -410,10 +410,10 @@ const Charts = () => {
                 <div className="hor-chart  bg-white dark:bg-[#1D1D1D] border-[#D2D6DA] border-solid border-[1px] rounded-[12px] p-4">
                     <div className="type-chart flex pt-2">
                         <div className="type-logo w-16 h-16 mt-[-40px] mr-[16px] rounded-xl bg-gradient-to-br from-[#42424a] to-[#191919] custom-shadow flex items-center justify-center">
-                            <AutoGraph className='text-white dark:text-black'/>
+                            <AutoGraph className='dark:text-[white]'/>
                         </div>
                         <div className="chart-type-text mt-[-16px] ">
-                            <h4 className="chart-type font-bold text-[#171717]">Line Chart</h4>
+                            <h4 className="chart-type font-bold dark:text-[#ffffffcc] text-[#171717]">Line Chart</h4>
                             <p className="chart-p text-[#A7A7A7]">Product insights</p>
                         </div>
                     </div>
@@ -422,10 +422,10 @@ const Charts = () => {
                 <div className="mix-chart  bg-white dark:bg-[#1D1D1D] border-[#D2D6DA] border-solid border-[1px] rounded-[12px] p-4">
                     <div className="type-chart flex pt-2">
                         <div className="type-logo w-16 h-16 mt-[-40px] mr-[16px] rounded-xl bg-gradient-to-br from-[#42424a] to-[#191919] custom-shadow flex items-center justify-center">
-                            <AutoGraph className='text-white dark:text-black'/>
+                            <AutoGraph className='dark:text-[white]'/>
                         </div>
                         <div className="chart-type-text mt-[-16px] ">
-                            <h4 className="chart-type font-bold text-[#171717]">Line Chart</h4>
+                            <h4 className="chart-type font-bold dark:text-[#ffffffcc] text-[#171717]">Line Chart</h4>
                             <p className="chart-p text-[#A7A7A7]">Product insights</p>
                         </div>
                     </div>
@@ -434,10 +434,10 @@ const Charts = () => {
                 <div className="radar-chart  bg-white dark:bg-[#1D1D1D] border-[#D2D6DA] border-solid border-[1px] rounded-[12px] p-4">
                     <div className="type-chart flex pt-2">
                         <div className="type-logo w-16 h-16 mt-[-40px] mr-[16px] rounded-xl bg-gradient-to-br from-[#42424a] to-[#191919] custom-shadow flex items-center justify-center">
-                            <AutoGraph className='text-white dark:text-black'/>
+                            <AutoGraph className='dark:text-[white]'/>
                         </div>
                         <div className="chart-type-text mt-[-16px] ">
-                            <h4 className="chart-type font-bold text-[#171717]">Line Chart</h4>
+                            <h4 className="chart-type font-bold dark:text-[#ffffffcc] text-[#171717]">Line Chart</h4>
                             <p className="chart-p text-[#A7A7A7]">Product insights</p>
                         </div>
                     </div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Log } from './Images';
 import Switch from '@mui/material/Switch';
 import { SlSocialInstagram } from "react-icons/sl";
@@ -24,6 +25,8 @@ import {
   } from '@heroicons/react/24/outline';
   import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import { Logout } from '@mui/icons-material';
+import { ToastContainer, toast } from 'react-toastify'; 
+import { Input } from '@mui/material';
   const products = [
     { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
     { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
@@ -35,7 +38,28 @@ import { Logout } from '@mui/icons-material';
     { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
     { name: 'Contact sales', href: '#', icon: PhoneIcon },
   ] 
+
 const LogOut = () => {
+  const warning = () => toast.error('🦄 Invalid Username or Password', {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: false,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+ });
+const nullUser = () => toast.warn('🦄 No user found......please Sign up', {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: false,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+ });
   const [isAnnual, setIsAnnual] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const plans = [
@@ -44,9 +68,59 @@ const LogOut = () => {
     { name: "Enterprise", monthly: 85, annual: 79 }
   ];
   const label = { inputProps: { 'aria-label': 'Switch demo' } };
+
+  const [data, setData] = useState({email :'',pass :''});
+    const [error, seterror] = useState({email: '',pass: ''});
+
+    const handleChange = (e) => {
+      const { name, value } = e.target;
+      if (name === 'email' && !/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/.test(value)) {
+          seterror((prev) => ({
+              ...prev,
+              email: 'Please enter a valid email.',
+          }));
+      } else if (name === 'pass' && !/^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/.test(value)) {
+          seterror((prev) => ({
+              ...prev,
+              pass: `Please check your password`,
+          }));
+      } else {
+          seterror((prev) => ({
+              ...prev,
+              [name]: '',
+          }));
+      }
+      setData({ ...data, [e.target.name]: e.target.value });
+ }; 
+
+ const navigate = useNavigate();
+
+ const goToAnotherRoute = () => {
+   navigate('/tailwind/');
+ };
+  function loginUser(){
+    let fdata = JSON.parse(localStorage.getItem('fdata')) || [];
+    if(fdata.find(item=>item.email == data.email) && fdata.find(item=>item.pass == data.pass)){
+    setData({email:'',pass:''});
+    let dashData = fdata.filter(item=> item.email === data.email);
+    localStorage.setItem('dashData',JSON.stringify(dashData));
+    goToAnotherRoute();
+    }else if(localStorage.length == 0){
+       nullUser("Hey");
+    }else if(data.email == '' && data.pass==''){ warning("GOTCHA BITCH"); seterror({email:'Invalid Email!',pass:'Invalid password!'});}
+    else if(!fdata.find(item=>item.email == data.email)){
+       seterror((item)=>({
+           ...item,email:'Please check your email'
+       }));
+    }else if(!fdata.find(item=>item.pass == data.pass)){
+       seterror((item)=>({
+           ...item,pass:'Please check your password'
+       }));
+    }
+}
   return (
     <>
-      <div className="logout bg-[#323238cb] bg-blend-multiply bg-cover bg-center h-[100vh] relative"
+      <div className="logout bg-[#323238cb] bg-blend-multiply bg-cover bg-center h-[100%] relative"
       style={{ backgroundImage: `url(${Log})` }}>
       <div className="pricing">
         <header className="p-6 py-8">
@@ -54,7 +128,6 @@ const LogOut = () => {
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -218,20 +291,45 @@ const LogOut = () => {
                 </ul>
             </div>
             <div className="inputs pt-10">
-            <input type="email" name="" id="" placeholder='Email' className='p-3 w-full border-[#D2D6DA] border-solid border-[1px] rounded-[8px] mb-4'/>
-            <input type="password" name="" id="" placeholder='Password' className='p-3 w-full border-[#D2D6DA] border-solid border-[1px] rounded-[8px] mb-4'/>
+            <Input type="email" name='email' id='emle'  placeholder='Email' value={data.email} onChange={handleChange} className='p-3 w-full border-[#D2D6DA] border-solid border-[1px] rounded-[8px] mb-4'
+             sx={{
+                    '&.MuiInput-underline:before': {
+                        borderBottom: '1px solid rgba(0, 0, 0, 0.42)',
+                    },
+                    '&.MuiInput-underline:hover:not(.Mui-disabled):before': {
+                        borderBottom: '2px solid rgba(0, 0, 0, 0.42)',
+                    },
+                    '&.MuiInput-underline:after': {
+                        borderBottom: '2px solid black',
+                    },
+                }}/>
+            <div className="text-[red] ">{error.email}</div>
+            <Input type="password" name='pass' id='pass' value={data.pass} onChange={handleChange} maxLength={8} placeholder='Password' className='p-3 w-full border-[#D2D6DA] border-solid border-[1px] rounded-[8px] mb-4'
+             sx={{
+                  '&.MuiInput-underline:before': {
+                      borderBottom: '1px solid rgba(0, 0, 0, 0.42)',
+                  },
+                  '&.MuiInput-underline:hover:not(.Mui-disabled):before': {
+                      borderBottom: '2px solid rgba(0, 0, 0, 0.42)',
+                  },
+                  '&.MuiInput-underline:after': {
+                      borderBottom: '2px solid black',
+                  },
+              }}/>
+            <div className="text-[red] ">{error.pass}</div>
             </div>
             <div className="switch flex items-center ">
                 <Switch {...label} color="default" />
                 <p className="swtich-p text-[18px] text-[#A7A7A7]">Remember me</p>
             </div>
-            <a className="w-full mt-8 mb-2 inline-flex justify-center whitespace-nowrap rounded-lg bg-[#343439] px-3.5 py-2.5 text-sm font-medium text-white dark:text-black shadow-sm shadow-indigo-950/10 hover:bg-indigo-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150" href="#0">
+            <button onClick={loginUser} className="w-full mt-8 mb-2 inline-flex justify-center whitespace-nowrap rounded-lg bg-[#343439] px-3.5 py-2.5 text-sm font-medium text-white dark:text-black shadow-sm shadow-indigo-950/10 hover:bg-indigo-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 cursor-pointer" href="#0">
             Sign In
-            </a>
-            <p className="sign-up mt-6 mb-2 text-[18px] text-[#A7A7A7] text-center">Don't have an accout? <span className='text-[#191919] font-bold'>Sign Up</span></p>
+            </button>
+            <p className="sign-up mt-6 mb-2 text-[18px] text-[#A7A7A7] text-center">Don't have an accout? <Link to='/tailwind/signup' className='text-[#191919] font-bold'>Sign Up</Link></p>
             </div>
         </div>
-      <footer className="footer py-12 flex items-center justify-between text-center mx-auto flex max-w-7xl items-center justify-between  lg:px-8 text-white dark:text-black relative bottom-0">
+
+      <footer className="footer py-12 text-center mx-auto flex max-w-7xl items-center justify-between  lg:px-8 text-white dark:text-black relative ">
         <p className="footerp text-[18px] text-white dark:text-black">Copyright © 2021 Material by Creative Tim.</p>
         <ul className='flex mb-6'>
           <li className='text-[18px] text-white dark:text-black mr-12'>Company</li>
@@ -241,6 +339,17 @@ const LogOut = () => {
         </ul>
       </footer>
       </div>
+      <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"/>
     </>
   );
 };

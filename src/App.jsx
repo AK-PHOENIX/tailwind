@@ -9,6 +9,9 @@ import { createBrowserRouter , RouterProvider , Link } from 'react-router-dom';
 import Profile from './components/Profile';
 import Charts from './components/Charts';
 import LogOut from './components/Logout';
+import Setting from './components/Setting';
+import Tables from './components/Tables';
+import SignIn from './components/SignIn';
 function App() {
   const router = createBrowserRouter([
     {
@@ -23,6 +26,14 @@ function App() {
             path: '/tailwind/charts',
             element: <Charts />,
         },
+        {
+          path : '/tailwind/setting',
+          element : <Setting/>,
+        },
+        {
+          path : '/tailwind/tables',
+          element : <Tables/>,
+        },
         ],
     },
     {
@@ -30,8 +41,12 @@ function App() {
       element : <Pricing/>,
     },
     {
-      path : '/tailwind/logout',
+      path : '/tailwind/signin',
       element : <LogOut/>,
+    },
+    {
+      path : '/tailwind/signup',
+      element : <SignIn/>,
     },
 ]);
   return (

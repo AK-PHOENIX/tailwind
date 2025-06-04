@@ -1,20 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { FaBiohazard } from "react-icons/fa";
 import { CiSettings } from "react-icons/ci";
-import { MdEdit } from "react-icons/md";
-import { SlSocialInstagram } from "react-icons/sl";
 import Switch from '@mui/material/Switch';
 import { IoIosHeart } from "react-icons/io";
-import Avatar from '@mui/material/Avatar';
-import AvatarGroup from '@mui/material/AvatarGroup';
-import Stack from '@mui/material/Stack';
-import Profile from './Profile';
-import Charts from './Charts';
-import Pricing from './Pricing';
+import { ToastContainer, toast } from 'react-toastify';
 
 import { AccountCircle, Logout, Notifications ,Menu, MenuOpen} from '@mui/icons-material';
-// import NotificationsIcon from '@mui/icons-material/Notifications';
 import { createBrowserRouter, RouterProvider, Link, Outlet, useLocation } from 'react-router-dom';
+import Tooltip from '@mui/material/Tooltip';
 const Home = () => {
     const [darkMode, setDarkMode] = useState(false);
     const location = useLocation();
@@ -24,7 +17,47 @@ const Home = () => {
     const [setting, setSetting] = useState(false);
     const [stick , setStick] = useState(false);
     const ref = useRef();
-
+    const notify = () => toast.success('🦄 Login Succesfull', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+     }); 
+     const welcome = () => {
+             toast(WithAvatar, {
+               closeButton: false,
+               autoClose:5000,
+               position: "top-center",
+               theme :'dark',
+               className:
+                 'shadow-lg overflow-visible scale-100 ring-1 ring-black/5 rounded-xl flex items-center gap-6 bg-slate-800 highlight-white/5',
+             });
+         }
+         function WithAvatar() {
+             let dashData = JSON.parse(localStorage.getItem('dashData')) || [];
+             // let dashData = fdata.filter(item=>item.email === data.email);
+             // console.log([...dashData,{username}]);
+             let userName = dashData[0].username;
+             let userImg = dashData[0].img;
+             return (
+             <div className="welcome">
+                 {/* <div className="welcome-logo">F</div> */}
+                 <h1 className="welcome-head">Welcome</h1>
+                 <div className="user-welcome">
+                     <img src={userImg} alt="" className="wel-img" />
+                     <p className="welcome-email">{userName}</p>
+                 </div>
+             </div>
+             );
+         }  
+    //  useEffect(() => {
+    //      notify();
+    //      welcome();
+    //  }, []);
     function miniNav(){
         side ? setSide(false) : setSide(true);
         if(sidenav == false){
@@ -55,7 +88,6 @@ const Home = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Yeh useEffect jab darkMode change ho tab chalega
     useEffect(() => {
         if (darkMode) {
         document.documentElement.classList.add("dark");
@@ -63,17 +95,20 @@ const Home = () => {
         document.documentElement.classList.remove("dark");
         }
     }, [darkMode]);
-
+    
     const label = { inputProps: { 'aria-label': 'Switch demo' } };
+
+    const data = JSON.parse(localStorage.getItem('dashData')) || [];
     return (
         <>
-            <div className="homepage bg-white dark:bg-[#171717] sm:flex">
-                <div className="sidebar bg-white dark:bg-[#1D1D1D] border-[1px] border-solid dark:border-[#262626] border-[#e5e5e5] rounded-[8px] flex flex-col m-[8px] " onMouseEnter={sidenav ? mouseIn : undefined} onMouseLeave={sidenav ? mouseOut : undefined}>
+            <div className="homepage bg-[#F5F5F5] dark:bg-[#171717] sm:flex min-h-[100dvh]">
+                <div className="sidebar h-min bg-white dark:bg-[#1D1D1D] border-[1px] border-solid dark:border-[#262626] border-[#e5e5e5] rounded-[8px] flex flex-col m-[8px] " onMouseEnter={sidenav ? mouseIn : undefined} onMouseLeave={sidenav ? mouseOut : undefined}>
                     <div className={side ? 'sm:w-[220px]' : 'w-full'}>
                         <div className="sidebar-logo max-sm:pr-[15px] flex justify-between sm:justify-start items-center pl-[15px] cursor-pointer gap-[16px]  pt-[10px] sm:pt-[20px] py-[12px] sm:py-[16px] pb-[10px] sm:pb-0 sm:mb-[2rem] ">
                             <div className="user-profile sm:hidden w-fit flex items-center gap-[16px] my-[1.5px] py-[2px]">
                                 <img src="rev-img.png" alt="" className="user-img min-w-[40px] h-[40px] rounded-[50%] object-cover" />
-                                <h6 className={side ? "user-name text-[18px] dark:text-white text-[#171717]" : 'hidden'}>Aman</h6>
+                                <h6 className={side ? "user-name text-[18px] dark:text-white text-[#171717]" : 'hidden'}>
+                                    {(data.length == 0) ? "John" : data[0].username}</h6>
                             </div>
                             <img src="ham-burger.png"  alt="" className="sidebar-logo-img dark:invert hidden sm:block w-[28px]" />
                             <div className="flex items-center sm:hidden ">
@@ -87,49 +122,85 @@ const Home = () => {
                         <div className="sidenav w-full items-center flex-col hidden  sm:block my-4">
                             <div className="user-profile w-fit sm:flex items-center gap-[16px] mx-[12px] my-[1.5px] py-[8px] px-[16px] hidden ">
                                 <img src="rev-img.png" alt="" className="user-img min-w-[30px] h-[30px] rounded-[50%] object-cover" />
-                                <h6 className={side ? "user-name text-[18px] text-[#171717] dark:text-white" : 'hidden'}>Aman</h6>
+                                <h6 className={side ? "user-name text-[18px] text-[#171717] dark:text-white" : 'hidden'}>{(data.length == 0) ? "John" : data[0].username}</h6>
                             </div>
+                            <Tooltip title={side ? "" : "My profile"} placement="right-start">
                             <div className="navs flex pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer dark:hover:bg-[#ffffff33] hover:bg-[#ededed] rounded-[8px] py-[8px] h-[40px] w-[200px] sm:w-full">
-                                <div className="to-img w-[20px] dark:text-white"><FaBiohazard /></div>
+                                    <div className="to-img w-[20px] dark:text-white">
+                                    {/* <FaBiohazard /> */}
+                                    M
+                                    </div>
                                 <Link to="/tailwind/" className={side ? "navs-text  px-[16px] text-[18px] text-[#171717] dark:text-white" : 'hidden'}>My Profile</Link>
                             </div>
-                            <div className="navs flex dark:text-white pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer dark:hover:bg-[#ffffff33] hover:bg-[#ededed] rounded-[8px] py-[8px] h-[40px] w-[200px] sm:w-full">
-                                <div className="to-img w-[20px] dark:text-white"><FaBiohazard /></div>
+                            </Tooltip>
+                                <Tooltip title={side ? "" : "Settings"} placement="right-start">
+                            <Link to='/tailwind/setting' className="navs flex dark:text-white pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer dark:hover:bg-[#ffffff33] hover:bg-[#ededed] rounded-[8px] py-[8px] h-[40px] w-[200px] sm:w-full">
+                                <div className="to-img w-[20px] dark:text-white">
+                                    {/* <FaBiohazard /> */}
+                                    S
+                                    </div>
                                 <p className={side ? "navs-text  px-[16px] dark:text-white text-[18px] text-[#171717]" : 'hidden'}>Settings</p>
-                            </div>
-                            <Link to='/tailwind/logout' className="navs flex pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer dark:hover:bg-[#ffffff33] hover:bg-[#ededed] rounded-[8px] py-[8px] h-[40px] w-[200px] sm:w-full">
-                                <div className="to-img w-[20px] dark:text-white"><FaBiohazard /></div>
+                            </Link>
+                                </Tooltip>                                   
+                            <Tooltip title={side ? "" : "LogOut"} placement="right-start">
+                            <Link to='/tailwind/signin' className="navs flex pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer dark:hover:bg-[#ffffff33] hover:bg-[#ededed] rounded-[8px] py-[8px] h-[40px] w-[200px] sm:w-full">
+                                <div className="to-img w-[20px] dark:text-white">
+                                    {/* <FaBiohazard /> */}
+                                    L
+                                    </div>
                                 <p className={side ? "navs-text  px-[16px] dark:text-white text-[18px] text-[#171717]]" : 'hidden'}>Logout</p>
                             </Link>
+                                </Tooltip>
                             <div className="navs flex pl-[15px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer dark:hover:bg-[#ffffff33] hover:bg-[#ededed] rounded-[8px] py-[8px] h-[40px] w-[200px] sm:w-full">
-                                <p className={side ? "navs-text  px-[16px] text-[18px] dark:text-white dark:text-white text-[#171717]]" : 'hidden'}>Pages</p>
+                                <p className={side ? "navs-text  px-[16px] text-[18px] dark:text-white dark:text-white text-[#171717]]" : 'px-0 text-[18px] dark:text-white dark:text-white text-[#171717]]'}>Pages</p>
+                                {/* <p className="navs-text  px-[16px] text-[18px] dark:text-white dark:text-white text-[#171717]]">Pages</p> */}
                             </div>
                             {/* <h2 className="username font-semibold text-[18px] pl-[20px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] text-[#171717]">Pages</h2> */}
+                            <Tooltip title={side ? "" : "Pricings"} placement="right-start">
                             <Link to='/tailwind/pricing' className="navs flex  pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer dark:hover:bg-[#ffffff33] hover:bg-[#ededed] rounded-[8px] py-[8px] h-[40px] w-[200px] sm:w-full">
-                                <div className="to-img w-[20px] dark:text-white"><FaBiohazard /></div>
+                                <div className="to-img w-[20px] dark:text-white">
+                                    {/* <FaBiohazard /> */}
+                                    P
+                                    </div>
                                 <p className={side ? "navs-text  px-[16px] dark:text-white text-[18px] text-[#171717]" : 'hidden'}>Pricing Page</p>
                             </Link>
+                            </Tooltip>
+                            <Tooltip title={side ? "" : "Charts"} placement="right-start">
                             <Link to='/tailwind/charts' className="navs flex pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer dark:hover:bg-[#ffffff33] hover:bg-[#ededed] rounded-[8px] py-[8px] h-[40px] w-[200px] sm:w-full">
-                                <div className="to-img w-[20px] dark:text-white"><FaBiohazard /></div>
+                                <div className="to-img w-[20px] dark:text-white">
+                                    {/* <FaBiohazard /> */}
+                                    C
+                                    </div>
                                 <p className={side ? "navs-text  px-[16px] dark:text-white text-[18px] text-[#171717]]" : 'hidden'}>Charts</p>
                             </Link>
+                                </Tooltip>
+                            <Tooltip title="Tables" placement="right-start">
+                            <Link to='/tailwind/tables' className="navs flex pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer dark:hover:bg-[#ffffff33] hover:bg-[#ededed] rounded-[8px] py-[8px] h-[40px] w-[200px] sm:w-full">
+                                <div className="to-img w-[20px] dark:text-white">
+                                    {/* <FaBiohazard /> */}
+                                    T
+                                    </div>
+                                <p className={side ? "navs-text  px-[16px] dark:text-white text-[18px] text-[#171717]]" : 'hidden'}>Tables</p>
+                            </Link>
+                                    </Tooltip>
 
                         </div>
                         <div className={nav ? "sidenav w-full items-center flex-col  max-sm:flex sm:hidden my-4" : 'hidden'}>
                             <div className="user-profile w-fit sm:flex items-center gap-[16px] mx-[12px] my-[1.5px] py-[8px] px-[16px] hidden ">
                                 <img src="rev-img.png" alt="" className="user-img min-w-[30px] h-[30px] rounded-[50%] object-cover" />
-                                <h6 className={side ? "user-name text-[18px] dark:text-white text-[#171717]" : 'hidden'}>Aman</h6>
+                                <h6 className={side ? "user-name text-[18px] dark:text-white text-[#171717]" : 'hidden'}>
+                                    {data.username}</h6>
                             </div>
                             <div className="navs flex pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer hover:bg-[#ededed] rounded-[8px] py-[8px] h-[40px] w-[200px] sm:w-full">
-                                <div className="to-img w-[20px] dark:text-white"><FaBiohazard /></div>
+                                <div className="to-img w-[20px] dark:text-white">M</div>
                                 <Link to="/tailwind/" className={side ? "navs-text dark:text-white  px-[16px] text-[18px] text-[#171717]" : 'hidden'}>My Profile</Link>
                             </div>
-                            <div className="navs flex pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer hover:bg-[#ededed] rounded-[8px] py-[8px] h-[40px] w-[200px] sm:w-full">
-                                <div className="to-img w-[20px] dark:text-white"><FaBiohazard /></div>
+                            <Link to='/tailwind/setting' className="navs flex pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer hover:bg-[#ededed] rounded-[8px] py-[8px] h-[40px] w-[200px] sm:w-full">
+                                <div className="to-img w-[20px] dark:text-white">S</div>
                                 <p className={side ? "navs-text px-[16px] dark:text-white text-[18px] text-[#171717]" : 'hidden'}>Settings</p>
-                            </div>
+                            </Link>
                             <Link to='/tailwind/logout' className="navs flex pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer hover:bg-[#ededed] rounded-[8px] py-[8px] h-[40px] w-[200px] sm:w-full">
-                                <div className="to-img w-[20px] dark:text-white"><FaBiohazard /></div>
+                                <div className="to-img w-[20px] dark:text-white">L</div>
                                 <p className={side ? "navs-text  px-[16px] dark:text-white text-[18px] text-[#171717]]" : 'hidden'}>Logout</p>
                             </Link>
                             <div className="navs flex pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer hover:bg-[#ededed] rounded-[8px] py-[8px] h-[40px] w-[200px] sm:w-full">
@@ -138,12 +209,16 @@ const Home = () => {
                             </div>
                             {/* <h2 className="username font-semibold text-[18px] pl-[20px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] text-[#171717]">Pages</h2> */}
                             <Link to='/tailwind/pricing' className="navs flex  pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer hover:bg-[#ededed] rounded-[8px] py-[8px] h-[40px] w-[200px] sm:w-full">
-                                <div className="to-img w-[20px] dark:text-white"><FaBiohazard /></div>
+                                <div className="to-img w-[20px] dark:text-white">P</div>
                                 <p className={side ? "navs-text  px-[16px] dark:text-white text-[18px] text-[#171717]" : 'hidden'}>Pricing Page</p>
                             </Link>
                             <Link to='/tailwind/charts' className="navs flex pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer hover:bg-[#ededed] rounded-[8px] py-[8px] h-[40px] w-[200px] sm:w-full">
-                                <div className="to-img w-[20px] dark:text-white"><FaBiohazard /></div>
+                                <div className="to-img w-[20px] dark:text-white">C</div>
                                 <p className={side ? "navs-text  px-[16px] dark:text-white text-[18px] text-[#171717]]" : 'hidden'}>Charts</p>
+                            </Link>
+                            <Link to='/tailwind/charts' className="navs flex pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer hover:bg-[#ededed] rounded-[8px] py-[8px] h-[40px] w-[200px] sm:w-full">
+                                <div className="to-img w-[20px] dark:text-white">T</div>
+                                <p className={side ? "navs-text  px-[16px] dark:text-white text-[18px] text-[#171717]]" : 'hidden'}>Tables</p>
                             </Link>
 
                         </div>
@@ -163,9 +238,9 @@ const Home = () => {
                                 <AccountCircle className='user-mini-logo w-[20px] h-[20px]' />
                             </div>
                             <div className="w-[34px] py-1.5 px-2 cursor-pointer dark:text-white">
-                                <CiSettings className='settings w-[20px] h-[20px]' onClick={() => { setSetting(true) }} />
+                                <CiSettings className='settings w-[24px] h-[24px]' onClick={() => { setSetting(true) }} />
                             </div>
-                            <div className={setting ? "setting p-8 absolute top-0 right-0 w-[360px] min-h-100vh z-30 bg-white dark:bg-[#1D1D1D] custom-shaow" : 'hidden'}>
+                            <div className={setting ? "setting p-8 absolute top-0 right-0 w-[360px] min-h-100vh z-30 bg-white custom-shaow dark:bg-[#1D1D1D] border-[1px] border-solid rounded-[8px] dark:border-[#262626] border-[#e5e5e5] " : 'hidden'}>
                                 <div className="dash-setting-head flex items-baseline justify-between">
                                     <div className="config">
                                         <h2 className="setting-head font-bold text-[20px] dark:text-white">Dashboard Config</h2>
@@ -225,6 +300,18 @@ const Home = () => {
                     </footer>
                 </div>
             </div>
+            <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        />
         </>
     )
 }
