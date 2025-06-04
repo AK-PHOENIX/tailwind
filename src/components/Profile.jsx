@@ -1,7 +1,4 @@
 import React from 'react'
-import { FaBiohazard } from "react-icons/fa";
-import { CiSettings } from "react-icons/ci";
-import { MdEdit } from "react-icons/md";
 import { SlSocialInstagram } from "react-icons/sl";
 import Switch from '@mui/material/Switch';
 import { IoIosHeart } from "react-icons/io";

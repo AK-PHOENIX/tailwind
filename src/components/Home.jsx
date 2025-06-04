@@ -174,15 +174,24 @@ const Home = () => {
                                 <p className={side ? "navs-text  px-[16px] dark:text-white text-[18px] text-[#171717]]" : 'hidden'}>Charts</p>
                             </Link>
                                 </Tooltip>
-                            <Tooltip title="Tables" placement="right-start">
-                            <Link to='/tailwind/tables' className="navs flex pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer dark:hover:bg-[#ffffff33] hover:bg-[#ededed] rounded-[8px] py-[8px] h-[40px] w-[200px] sm:w-full">
+                            <Tooltip title="UserTable" placement="right-start">
+                            <Link to='/tailwind/userTable' className="navs flex pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer dark:hover:bg-[#ffffff33] hover:bg-[#ededed] rounded-[8px] py-[8px] h-[40px] w-[200px] sm:w-full">
                                 <div className="to-img w-[20px] dark:text-white">
                                     {/* <FaBiohazard /> */}
-                                    T
+                                    UT
                                     </div>
-                                <p className={side ? "navs-text  px-[16px] dark:text-white text-[18px] text-[#171717]]" : 'hidden'}>Tables</p>
+                                <p className={side ? "navs-text  px-[16px] dark:text-white text-[18px] text-[#171717]]" : 'hidden'}>UserTable</p>
                             </Link>
-                                    </Tooltip>
+                            </Tooltip>
+                            <Tooltip title="ProjectTable" placement="right-start">
+                            <Link to='/tailwind/projectTable' className="navs flex pl-[30px] pr-[12px] my-[2.4px] mx-[3px] mt-[4.5px] w-fill items-center cursor-pointer dark:hover:bg-[#ffffff33] hover:bg-[#ededed] rounded-[8px] py-[8px] h-[40px] w-[200px] sm:w-full">
+                                <div className="to-img w-[20px] dark:text-white">
+                                    {/* <FaBiohazard /> */}
+                                    PT
+                                    </div>
+                                <p className={side ? "navs-text  px-[16px] dark:text-white text-[18px] text-[#171717]]" : 'hidden'}>ProjectTable</p>
+                            </Link>
+                            </Tooltip>
 
                         </div>
                         <div className={nav ? "sidenav w-full items-center flex-col  max-sm:flex sm:hidden my-4" : 'hidden'}>

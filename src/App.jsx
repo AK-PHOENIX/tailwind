@@ -10,8 +10,9 @@ import Profile from './components/Profile';
 import Charts from './components/Charts';
 import LogOut from './components/Logout';
 import Setting from './components/Setting';
-import Tables from './components/Tables';
 import SignIn from './components/SignIn';
+import UserTable from './components/Tables';
+import ProjectTable from './components/ProjectTable';
 function App() {
   const router = createBrowserRouter([
     {
@@ -31,8 +32,12 @@ function App() {
           element : <Setting/>,
         },
         {
-          path : '/tailwind/tables',
-          element : <Tables/>,
+          path : '/tailwind/userTable',
+          element : <UserTable/>,
+        },
+        {
+          path : '/tailwind/projectTable',
+          element : <ProjectTable/>,
         },
         ],
     },
