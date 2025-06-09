@@ -70,7 +70,7 @@ const nullUser = () => toast.warn('🦄 No user found......please Sign up', {
   const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
   const [data, setData] = useState({email :'',pass :''});
-    const [error, seterror] = useState({email: '',pass: ''});
+  const [error, seterror] = useState({email: '',pass: ''});
 
     const handleChange = (e) => {
       const { name, value } = e.target;

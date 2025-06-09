@@ -11,7 +11,7 @@ const Profile = () => {
   const label = { inputProps: { 'aria-label': 'Switch demo' } };
   const fdata = JSON.parse(localStorage.getItem('fdata')) || [];
     const dashData = JSON.parse(localStorage.getItem('dashData'));
-    let userId = dashData[0].id;
+    let userId = dashData ?  dashData[0].id : '1';
     const data = fdata.find((item)=> item.id === userId);
 
   return (
@@ -23,7 +23,7 @@ const Profile = () => {
                         <div className="profile-user flex gap-6 items-center">
                             <img src="rev-img.png" alt="" className="profile-image w-[74px] h-[74px] rounded-[50%] object-cover" />
                             <div className="user-info">
-                            <h2 className="username font-semibold text-[20px] dark:text-white text-[#171717]">{(data.username) ? data.username : "John"}</h2>
+                            <h2 className="username font-semibold text-[20px] dark:text-white text-[#171717]">{data ? data.username : "John"}</h2>
                             <p className="user-desg text-[16px] sm:text-[18px] dark:text-[#ffffffcc] text-[#737373]">CEO /Co-Founder of Dev</p>
                             </div>
                         </div>
@@ -90,10 +90,10 @@ const Profile = () => {
                             <div className="info-content p-4 ">
                                 <p className="info-p mb-8 dark:text-[#ffffffcc]  text-[#737373] text-[18px] text-center sm:text-start">Hi, I’m Alec Thompson, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality).</p>
                                 <ul>
-                                    <li className=' dark:text-[#ffffffcc] text-[#737373] text-[16px] flex py-2 pr-4 gap-3'><span className='font-semibold dark:text-white  text-[#171717]'>Full Name: </span>{data.username ? data.username : 'John'}</li>
-                                    <li className=' dark:text-[#ffffffcc] text-[#737373] text-[16px] flex py-2 pr-4 gap-3'><span className='font-semibold dark:text-white  text-[#171717]'>Mobile: </span>{data.ph ? data.ph : ''}</li>
-                                    <li className=' dark:text-[#ffffffcc] text-[#737373] text-[16px] flex py-2 pr-4 gap-3'><span className='font-semibold dark:text-white  text-[#171717]'>Email: </span>{data.email ? data.email : ''}</li>
-                                    <li className=' dark:text-[#ffffffcc] text-[#737373] text-[16px] flex py-2 pr-4 gap-3'><span className='font-semibold dark:text-white  text-[#171717]'>Location: </span>{data.add ? data.add : ''}</li>
+                                    <li className=' dark:text-[#ffffffcc] text-[#737373] text-[16px] flex py-2 pr-4 gap-3'><span className='font-semibold dark:text-white  text-[#171717]'>Full Name: </span>{data ? data.username : 'John'}</li>
+                                    <li className=' dark:text-[#ffffffcc] text-[#737373] text-[16px] flex py-2 pr-4 gap-3'><span className='font-semibold dark:text-white  text-[#171717]'>Mobile: </span>{data ? data.ph : ''}</li>
+                                    <li className=' dark:text-[#ffffffcc] text-[#737373] text-[16px] flex py-2 pr-4 gap-3'><span className='font-semibold dark:text-white  text-[#171717]'>Email: </span>{data ? data.email : ''}</li>
+                                    <li className=' dark:text-[#ffffffcc] text-[#737373] text-[16px] flex py-2 pr-4 gap-3'><span className='font-semibold dark:text-white  text-[#171717]'>Location: </span>{data ? data.add : ''}</li>
                                     <li className=' dark:text-[#ffffffcc] text-[#737373] text-[16px] flex py-2 pr-4 gap-3'><span className='font-semibold dark:text-white  text-[#171717]'>Social: </span> <SlSocialInstagram /><SlSocialInstagram /><SlSocialInstagram /></li>
                                 </ul>
                             </div>
