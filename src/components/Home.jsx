@@ -9,7 +9,7 @@ import { AccountCircle, Logout, Notifications ,Menu, MenuOpen} from '@mui/icons-
 import { createBrowserRouter, RouterProvider, Link, Outlet, useLocation } from 'react-router-dom';
 import Tooltip from '@mui/material/Tooltip';
 const Home = () => {
-    const [darkMode, setDarkMode] = useState(false);
+    const [darkMode, setDarkMode] = useState(true);
     const location = useLocation();
     const [side, setSide] = useState(true);
     const [sidenav, setSidenav] = useState(false);
@@ -58,6 +58,11 @@ const Home = () => {
     //      notify();
     //      welcome();
     //  }, []);
+    const handleDark = () => {
+        darkMode ? setDarkMode(false) : setDarkMode(true);
+        console.log(darkMode);
+        darkMode ? localStorage.setItem('theme' ,true) : localStorage.setItem('theme' ,false);
+    }
     function miniNav(){
         side ? setSide(false) : setSide(true);
         if(sidenav == false){
@@ -89,7 +94,8 @@ const Home = () => {
     }, []);
 
     useEffect(() => {
-        if (darkMode) {
+        let theme = localStorage.getItem('theme') || false;
+        if (theme === 'true') {
         document.documentElement.classList.add("dark");
         } else {
         document.documentElement.classList.remove("dark");
@@ -273,7 +279,7 @@ const Home = () => {
                                     <Switch {...label} color="default" onChange={()=> setStick(prev => !prev)}/></li>
                                     <li className="opts hidden  sm:flex items-center justify-between font-bold text-4 dark:text-white"><span>Sidenav Mini</span> <Switch ref={ref} {...label} color="default" onChange={miniNav} /></li>
                                     <li className="opts flex items-center justify-between font-bold text-4 dark:text-white"><span>Light/Dark</span> 
-                                    <Switch {...label} color="default" onClick={() => setDarkMode(!darkMode)}/></li>
+                                    <Switch {...label} color="default" onChange={handleDark}/></li>
                                 </ul>
                                 <a className="w-full mt-6 inline-flex justify-center whitespace-nowrap rounded-lg bg-gradient-to-br from-[#42424a] to-[#191919]  px-3.5 py-2.5 text-sm font-medium text-white dark:text-white shadow-sm shadow-indigo-950/10 hover:custom-shadow focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150" href="#0">
                                     Buy Now

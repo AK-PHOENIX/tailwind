@@ -53,7 +53,7 @@ export default function StickyHeadTable() {
             placeholder="Search..."
             value={searchTerm}
             onChange={e => { setSearchTerm(e.target.value); setCurrentPage(1); }}
-            className="w-1/3 dark:bg-[#1D1D1D] dark:text-white"
+            className="w-1/3 dark:!bg-[#1D1D1D] dark:!text-white"
           />
           
           <div className="flex items-center gap-2">
@@ -105,7 +105,7 @@ export default function StickyHeadTable() {
         </table>
 
         {/* Pagination */}
-        <div className="flex justify-between items-center p-4">
+        <div className="flex justify-between items-center p-4 bg-[#F5F5F5] dark:bg-[#1D1D1D]">
           <button
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
             disabled={currentPage === 1}

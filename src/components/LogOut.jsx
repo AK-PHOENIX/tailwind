@@ -124,7 +124,7 @@ const nullUser = () => toast.warn('🦄 No user found......please Sign up', {
       style={{ backgroundImage: `url(${Log})` }}>
       <div className="pricing">
         <header className="p-6 py-8">
-      <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between  lg:px-8 text-white dark:text-black">
+      <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between  lg:px-8 text-white">
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
@@ -140,11 +140,11 @@ const nullUser = () => toast.warn('🦄 No user found......please Sign up', {
             <Bars3Icon aria-hidden="true" className="size-6" />
           </button>
         </div>
-        <PopoverGroup className="hidden lg:flex lg:gap-x-12 text-white dark:text-black">
+        <PopoverGroup className="hidden lg:flex lg:gap-x-12 text-white ">
           <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold text-white dark:text-black">
+            <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold text-white ">
               Product
-              <ChevronDownIcon aria-hidden="true" className="size-5 flex-none text-white dark:text-black" />
+              <ChevronDownIcon aria-hidden="true" className="size-5 flex-none text-white " />
             </PopoverButton>
 
             <PopoverPanel
@@ -280,18 +280,18 @@ const nullUser = () => toast.warn('🦄 No user found......please Sign up', {
       </Dialog>
     </header>
       </div>
-        <div className="form flex justify-center items-center">
-            <div className="form-inside bg-white dark:bg-[#1D1D1D] rounded-[8px] p-4 w-[420px]">
-            <div className="form-head p-4 bg-[#343439] text-white dark:text-black text-center rounded-[8px]">
+        <div className="form flex justify-center items-center ">
+            <div className="form-inside bg-white dark:bg-[#1D1D1D] border-[1px] border-solid dark:border-[#262626] border-[#e5e5e5] rounded-[8px] p-4 w-[420px]">
+            <div className="form-head p-4 bg-[#343439] dark:bg-[#D2D6DA] text-white dark:text-black text-center rounded-[8px]">
                 <h2 className="sign-in mt-2 text-2xl font-semibold">Sign in</h2>
                 <ul className='flex itemx-center justify-center mt-2 mb-6 gap-6 pt-4'>
-                <li className=' w-[20px]'><SlSocialInstagram/></li>
+                <li className=' w-[20px] '><SlSocialInstagram/></li>
                 <li className=' w-[20px]'><SlSocialInstagram/></li>
                 <li className=' w-[20px]'><SlSocialInstagram/></li>
                 </ul>
             </div>
             <div className="inputs pt-10">
-            <Input type="email" name='email' id='emle'  placeholder='Email' value={data.email} onChange={handleChange} className='p-3 w-full border-[#D2D6DA] border-solid border-[1px] rounded-[8px] mb-4'
+            <Input type="email" name='email' id='emle'  placeholder='Email' value={data.email} onChange={handleChange} className='p-3 w-full border-[#D2D6DA] dark:!text-white  border-solid border-[1px] rounded-[8px] mb-4'
              sx={{
                     '&.MuiInput-underline:before': {
                         borderBottom: '1px solid rgba(0, 0, 0, 0.42)',
@@ -304,7 +304,7 @@ const nullUser = () => toast.warn('🦄 No user found......please Sign up', {
                     },
                 }}/>
             <div className="text-[red] ">{error.email}</div>
-            <Input type="password" name='pass' id='pass' value={data.pass} onChange={handleChange} maxLength={8} placeholder='Password' className='p-3 w-full border-[#D2D6DA] border-solid border-[1px] rounded-[8px] mb-4'
+            <Input type="password" name='pass' id='pass' value={data.pass} onChange={handleChange} maxLength={8} placeholder='Password' className='p-3 w-full border-[#D2D6DA] border-solid border-[1px] rounded-[8px] mb-4 dark:!text-white'
              sx={{
                   '&.MuiInput-underline:before': {
                       borderBottom: '1px solid rgba(0, 0, 0, 0.42)',
@@ -322,10 +322,10 @@ const nullUser = () => toast.warn('🦄 No user found......please Sign up', {
                 <Switch {...label} color="default" />
                 <p className="swtich-p text-[18px] text-[#A7A7A7]">Remember me</p>
             </div>
-            <button onClick={loginUser} className="w-full mt-8 mb-2 inline-flex justify-center whitespace-nowrap rounded-lg bg-[#343439] px-3.5 py-2.5 text-sm font-medium text-white dark:text-black shadow-sm shadow-indigo-950/10 hover:bg-indigo-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 cursor-pointer" href="#0">
+            <button onClick={loginUser} className="w-full mt-8 mb-2 inline-flex justify-center whitespace-nowrap rounded-lg bg-[#343439] px-3.5 py-2.5 text-sm font-medium text-white  shadow-sm shadow-indigo-950/10 hover:bg-indigo-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 cursor-pointer" href="#0">
             Sign In
             </button>
-            <p className="sign-up mt-6 mb-2 text-[18px] text-[#A7A7A7] text-center">Don't have an accout? <Link to='/tailwind/signup' className='text-[#191919] font-bold'>Sign Up</Link></p>
+            <p className="sign-up mt-6 mb-2 text-[18px] text-[#A7A7A7] text-center">Don't have an accout? <Link to='/tailwind/signup' className='text-[#191919] dark:text-whitex font-bold'>Sign Up</Link></p>
             </div>
         </div>
 
